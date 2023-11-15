@@ -45,10 +45,11 @@ export default function LoginCard() {
             const data = await res.json()
 
             if (data.error) {
+                console.log(data.error);
                 showToast("Error",data.error,"error")
                 return
             }
-            console.log(data);
+            // console.log(data);
             localStorage.setItem("user-threads", JSON.stringify(data))
             setUser(data)
         } catch (error) {
